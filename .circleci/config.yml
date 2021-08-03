@@ -2,12 +2,14 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/repo
+    working_directory: ~/
     docker:
       - image: rust:latest
     steps:
       - run:
           name: Build Rust
           command: |
+            ls
+            pwd
             cargo build --verbose
             cargo test --verbose
