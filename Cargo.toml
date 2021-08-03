@@ -1,0 +1,49 @@
+[package]
+name = "test1"
+version = "0.1.0"
+authors = ["ben <bxerri@commercehub.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lambda_http = { git = "https://github.com/awslabs/aws-lambda-rust-runtime/", rev = "5ae037ef9ffabdac5a2cfcd22cd2c090e104e914"}
+lambda_runtime = "0.3.0"
+log = "0.4.14"
+futures = "^0.3.5"
+futures-util = "^0.3.12"
+anyhow = "1.0.38"
+thiserror = "1.0.25"
+tokio = { version = "1.4.0", features = ["full"] }
+serde = { version = "1.0.124", features = ["derive"] }
+serde_json = "1.0.64"
+rust_decimal = { version = "1.10.3", features = ["db-postgres"] }
+rusoto_core = {version = "0.46", default_features = false, features = ["rustls"]}
+reqwest = { version = "0.10.9", default_features = false, features = [ "rustls-tls" ] }
+chrono = "0.4"
+lazy_static = "1.4.0"
+async_once = "0.2.1"
+figment = { version = "0.10.6", features = ["toml", "env"] }
+rand = "0.8"
+either = "1"
+num_cpus = "1.0"
+time = "0.2.11"
+memchr = "2" # TODO: Use pear instead
+binascii = "0.1"
+atty = "0.2"
+ref-cast = "1.0"
+atomic = "0.5"
+parking_lot = "0.11"
+pin-project-lite = "0.2"
+indexmap = { version = "1.0", features = ["serde-1", "std"] }
+tempfile = "3"
+async-trait = "0.1.43"
+async-stream = "0.3.2"
+multer = { version = "2", features = ["tokio-io"] }
+tokio-stream = { version = "0.1.6", features = ["signal", "time"] }
+state = "0.5.1"
+uuid_ = { package = "uuid", version = "0.8", optional = true, features = ["serde"] }
+yansi = "0.5"
+ahash = "0.7.0"
+tracing = {version = "0.1", features = ["release_max_level_info"]}
+instant = { version = "0.1", features = ["wasm-bindgen"] }

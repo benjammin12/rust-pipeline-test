@@ -1,0 +1,28 @@
+service: test
+useDotenv: false
+
+plugins:
+  - serverless-rust
+
+package:
+  individually: true
+
+custom:
+  environment: test
+  rust:
+    dockerless: true
+
+provider:
+  name: aws
+  runtime: rust
+  deploymentBucket: test1234
+  stage: test
+  region: 'us-east-1'
+
+functions:
+
+  scorecard-data-reader:
+    handler: test1.handler
+    timeout: 600
+    environment:
+      RUST_LOG: info
