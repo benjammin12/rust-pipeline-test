@@ -5,5 +5,8 @@ jobs:
       - image: rust:latest
     steps:
       - checkout
-      - run: cargo build --verbose
-      - run: cargo test --verbose
+      - run: apt update && apt -y upgrade
+      - run: apt -y install musl-tools npm
+      - run: rustup target add x86_64-unknown-linux-musl
+      - run: npm install
+      - run: npx sls package
